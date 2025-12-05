@@ -2,19 +2,48 @@ document.addEventListener('DOMContentLoaded', () => {
     const navbar = document.querySelector('.navbar');
     const whatsappBtn = document.getElementById('whatsappBtn');
     
+    let lastScrollTop = 0;
+    const navbarHeight = navbar.offsetHeight;
+
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+        if (scrollTop > 50) {
             navbar.classList.add('shadow');
         } else {
             navbar.classList.remove('shadow');
         }
 
+        if (scrollTop > lastScrollTop && scrollTop > navbarHeight) {
+            
+            navbar.style.transform = 'translateY(-100%)';
+        } else {
+            
+            navbar.style.transform = 'translateY(0)';
+        }
+        
+        lastScrollTop = scrollTop;
+
         // WhatsApp button animation on scroll
-        if (window.scrollY > 300) {
+        if (scrollTop > 300) {
             whatsappBtn.style.opacity = '1';
             whatsappBtn.style.transform = 'translateY(0)';
         }
     });
+
+    // Close mobile menu when a link is clicked
+    const navLinks = document.querySelectorAll('.nav-link');
+    const navCollapse = document.getElementById('navbarNav');
+    if (navCollapse) { // Check if element exists to avoid errors
+        const bsCollapse = new bootstrap.Collapse(navCollapse, {toggle: false});
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                 if (navCollapse.classList.contains('show')) {
+                    bsCollapse.hide();
+                }
+            });
+        });
+    }
 
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {

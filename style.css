@@ -18,6 +18,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Navbar */
+.navbar {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+}
+
 .navbar-brand img {
     max-height: 80px; /* Increased size */
     transition: all 0.3s ease;
@@ -94,6 +98,39 @@ h1, h2, h3, h4, h5, h6 {
 /* Why Us */
 .text-secondary-custom {
     color: #555;
+}
+
+/* Blog Section */
+.blog-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.15)!important;
+}
+
+.blog-card img {
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.blog-card:hover img {
+    transform: scale(1.05);
+}
+
+.bg-primary-subtle {
+    background-color: rgba(234, 179, 8, 0.15); /* Light version of primary color */
+}
+
+.text-primary {
+    color: var(--primary-color) !important;
+}
+
+.btn-link.text-primary:hover {
+    color: var(--primary-hover) !important;
 }
 
 /* Footer */
