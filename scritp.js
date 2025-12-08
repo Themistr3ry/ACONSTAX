@@ -74,4 +74,23 @@ document.addEventListener('DOMContentLoaded', () => {
         card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
         observer.observe(card);
     });
+
+    // About Us section scroll animations
+    const aboutObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+            }
+        });
+    }, {
+        threshold: 0.2 // Trigger when 20% of the element is visible
+    });
+
+    const aboutText = document.querySelector('.about-text');
+    const aboutImage = document.querySelector('.about-image');
+    const servicesList = document.querySelector('.services-list-section');
+    
+    if (aboutText) aboutObserver.observe(aboutText);
+    if (aboutImage) aboutObserver.observe(aboutImage);
+    if (servicesList) aboutObserver.observe(servicesList);
 });

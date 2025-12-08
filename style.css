@@ -51,7 +51,7 @@ h1, h2, h3, h4, h5, h6 {
 .hero-section {
     position: relative;
     height: 600px;
-    background: url('https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+    background: url('hero-background.png') no-repeat center center/cover;
     margin-bottom: 100px;
 }
 
@@ -99,6 +99,86 @@ h1, h2, h3, h4, h5, h6 {
 .text-secondary-custom {
     color: #555;
 }
+
+/* About Us Section Animations */
+.about-text {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.about-text.animate {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.about-image {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.8s ease-out 0.2s, transform 0.8s ease-out 0.2s;
+}
+
+.about-image.animate {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.about-image img {
+    border-radius: 20px !important;
+    transition: transform 0.3s ease;
+}
+
+.about-image img:hover {
+    transform: scale(1.02);
+}
+
+.about-paragraph {
+    font-size: 12pt;
+}
+
+/* Services List in About Section */
+.services-list-section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.services-list-section.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.services-simple-list {
+    list-style: none;
+    padding-left: 0;
+    column-count: 2;
+    column-gap: 40px;
+}
+
+.services-simple-list li {
+    margin-bottom: 15px;
+    padding-left: 30px;
+    position: relative;
+    color: var(--text-color);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.services-simple-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+    .services-simple-list {
+        column-count: 1;
+    }
+}
+
 
 /* Blog Section */
 .blog-card {
