@@ -216,7 +216,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .bg-primary-subtle {
-    background-color: rgba(234, 179, 8, 0.15); /* Light version of primary color */
+    background-color: rgba(234, 179, 8, 0.15);
 }
 
 .text-primary {
@@ -295,11 +295,12 @@ h1, h2, h3, h4, h5, h6 {
         background: url('hero responsibe.svg') no-repeat center center/cover;
     }
     .hero-section h1 {
-        font-size: 1.70rem; 
-        line-height: 1.1;
+        font-size: 1.42rem; 
+        line-height: 1.12;
+        letter-spacing: -1.4px;
     }
     .hero-section p {
-        font-size: 1rem; 
+        font-size: 1rem;
     }
     .hero-section .display-1, .hero-section .display-2 {
         font-size: 3rem; 
