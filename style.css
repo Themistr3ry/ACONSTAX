@@ -10,6 +10,8 @@
 body {
     font-family: var(--font-body);
     color: var(--text-color);
+    width: 100%;
+    overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -20,6 +22,9 @@ h1, h2, h3, h4, h5, h6 {
 /* Navbar */
 .navbar {
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+}
+.navbar {
+    overflow-x: hidden;
 }
 
 .navbar-brand img {
@@ -51,7 +56,7 @@ h1, h2, h3, h4, h5, h6 {
 .hero-section {
     position: relative;
     height: 600px;
-    background: url('hero-background.png') no-repeat center center/cover;
+    background: url('hero-background.svg') no-repeat center center/cover;
     margin-bottom: 100px;
 }
 
@@ -129,11 +134,20 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .about-image img:hover {
-    transform: scale(1.02);
+    transform: scale(1.00);
 }
 
 .about-paragraph {
     font-size: 12pt;
+}
+.about-us-section {
+    overflow-x: hidden;
+}
+#about-section-id .container { 
+    overflow-x: hidden;
+}
+#nosotros {
+    overflow-x: hidden;
 }
 
 /* Services List in About Section */
@@ -275,9 +289,20 @@ h1, h2, h3, h4, h5, h6 {
 /* Responsive */
 @media (max-width: 991px) {
     .hero-section {
-        height: auto;
+        height: 450px;
         padding: 100px 0;
         margin-bottom: 0;
+        background: url('hero responsibe.svg') no-repeat center center/cover;
+    }
+    .hero-section h1 {
+        font-size: 1.70rem; 
+        line-height: 1.1;
+    }
+    .hero-section p {
+        font-size: 1rem; 
+    }
+    .hero-section .display-1, .hero-section .display-2 {
+        font-size: 3rem; 
     }
     
     .services-section {
