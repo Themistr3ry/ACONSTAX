@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Close mobile menu when a link is clicked
     const navLinks = document.querySelectorAll('.nav-link');
     const navCollapse = document.getElementById('navbarNav');
-    if (navCollapse) { // Check if element exists to avoid errors
+    if (navCollapse) { 
         const bsCollapse = new bootstrap.Collapse(navCollapse, {toggle: false});
         navLinks.forEach(link => {
             link.addEventListener('click', () => {

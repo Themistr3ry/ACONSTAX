@@ -23,7 +23,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar-brand img {
-    max-height: 80px; /* Increased size */
+    max-height: 68px;
     transition: all 0.3s ease;
 }
 
@@ -61,7 +61,7 @@ h1, h2, h3, h4, h5, h6 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.3);
     z-index: 1;
 }
 
